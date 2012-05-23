@@ -1,8 +1,5 @@
- $(document).ready(function(){
-    console.log("We are on the infoPage"); 
-        $.ajax({
-            url: "_view/movies",
-            dataType: "json",
+  $("#infoPage").live("pageshow", function(){
+	  $.couch.db("asdproject").view("plugin/movies",{
             success: function(data){
                 console.log(data);
                  $.each(data.rows, function(index, family){
@@ -21,6 +18,9 @@
                  
               $('#programList').listview('refresh');
             }
-        });
+        })
         
-    });   
+    }); 
+  
+}); 
+ 

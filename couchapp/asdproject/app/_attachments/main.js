@@ -1,5 +1,5 @@
   $("#infoPage").live("pageshow", function(){
-	  $.couch.db("asdproject").view("plugin/movies",{
+	  $.couch.db("asdproject3").view("app/movies",{
             success: function(data){
                 console.log(data);
                  $.each(data.rows, function(index, family){
@@ -18,9 +18,9 @@
                  
               $('#programList').listview('refresh');
             }
-        })
+        });
         
     }); 
   
-}); 
+
  
